@@ -14,6 +14,7 @@ import hcmiu.iot.smartparking.beans.Place;
 import hcmiu.iot.smartparking.dao.PlacesDAO;
 import hcmiu.iot.smartparking.utils.MyUtils;
 
+
 public class Map extends HttpServlet{
 	private static final long serialVersionUID=1L;
 	private ArrayList<Place> pList=null;
