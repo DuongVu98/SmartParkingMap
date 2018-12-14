@@ -32,7 +32,7 @@ public class JDBCFilter implements Filter{
 		String servletPath= req.getServletPath();
 		
 		if(servletPath.contains("/initmap")) {
-			Connection conn=null;
+			Connection conn = null;
 			
 			try {
 				conn=ConnectionUtils.getConnection();
