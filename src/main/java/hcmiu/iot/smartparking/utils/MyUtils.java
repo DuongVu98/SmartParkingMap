@@ -12,7 +12,7 @@ public class MyUtils {
 	}
 	
 	//Connection utilities
-	public static Connection getConnection(ServletRequest request, Connection conn) {
+	public static Connection getStoredConnection(ServletRequest request) {
 		return (Connection)request.getAttribute(ATT_NAME_CONNECTION);
 	}
 	
