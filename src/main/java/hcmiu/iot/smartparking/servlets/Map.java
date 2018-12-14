@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,11 +27,15 @@ public class Map extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		pList=pdao.getAllPlaces(MyUtils.getStoredConnection(request));
 		request.setAttribute("placesList", pList);
+		ServletOutputStream out = response.getOutputStream();
+		out.println(pList.toString());
+		System.out.println(pList.toString());
 //		RequestDispatcher rd=null;
 //		rd=request.getRequestDispatcher("/map.jsp");
 //		rd.forward(request, response);
 	}
 	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.doGet(request, response);
 	}
