@@ -1,4 +1,4 @@
-package hcmiu.iot.smartparking.servlets;
+package hcmiu.iot.parkingmap.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import hcmiu.iot.smartparking.beans.Place;
-import hcmiu.iot.smartparking.dao.PlacesDAO;
-import hcmiu.iot.smartparking.utils.MyUtils;
+import hcmiu.iot.parkingmap.beans.Place;
+import hcmiu.iot.parkingmap.dao.PlacesDAO;
+import hcmiu.iot.parkingmap.utils.MyUtils;
 
 
 public class Map extends HttpServlet{

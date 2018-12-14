@@ -1,4 +1,4 @@
-package hcmiu.iot.smartparking.conn;
+package hcmiu.iot.parkingmap.conn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

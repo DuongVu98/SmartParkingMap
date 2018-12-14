@@ -1,9 +1,9 @@
-package hcmiu.iot.smartparking.utils;
+package hcmiu.iot.parkingmap.utils;
 
 import java.sql.Connection;
 import java.util.List;
 
-import hcmiu.iot.smartparking.beans.Place;
+import hcmiu.iot.parkingmap.beans.Place;
 
 public interface PlacesUtils {
 	public Place getById(Connection conn, int id);

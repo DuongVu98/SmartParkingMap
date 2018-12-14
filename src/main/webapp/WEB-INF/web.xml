@@ -6,7 +6,7 @@
 
 	<servlet>
 		<servlet-name>Map</servlet-name>
-		<servlet-class>hcmiu.iot.smartparking.servlets.Map</servlet-class>
+		<servlet-class>hcmiu.iot.parkingmap.servlets.Map</servlet-class>
 	</servlet>
 
 	<servlet-mapping>

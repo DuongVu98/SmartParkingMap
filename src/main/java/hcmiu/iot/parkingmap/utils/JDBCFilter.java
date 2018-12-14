@@ -1,4 +1,4 @@
-package hcmiu.iot.smartparking.utils;
+package hcmiu.iot.parkingmap.utils;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,7 +13,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-import hcmiu.iot.smartparking.conn.ConnectionUtils;
+import hcmiu.iot.parkingmap.conn.ConnectionUtils;
 
 @WebFilter(urlPatterns= {"/*"})
 public class JDBCFilter implements Filter{

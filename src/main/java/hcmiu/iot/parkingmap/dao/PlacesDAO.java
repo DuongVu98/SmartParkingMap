@@ -1,4 +1,4 @@
-package hcmiu.iot.smartparking.dao;
+package hcmiu.iot.parkingmap.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import hcmiu.iot.smartparking.conn.ConnectionUtils;
-import hcmiu.iot.smartparking.beans.Place;
+import hcmiu.iot.parkingmap.conn.ConnectionUtils;
+import hcmiu.iot.parkingmap.beans.Place;
 
 public class PlacesDAO {
 	public PlacesDAO() {
