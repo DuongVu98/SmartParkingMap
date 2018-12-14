@@ -45,6 +45,7 @@ public class JDBCFilter implements Filter{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				ConnectionUtils.rollbackQuietly(conn);
+				System.out.println("exception");
 				throw new ServletException();
 			}finally {
 				ConnectionUtils.closeQuietly(conn);
