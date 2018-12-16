@@ -13,5 +13,6 @@ public class MySQLConnUtils {
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn=DriverManager.getConnection(url, userName, password);
-		return conn;	}
+		return conn;
+		}
 }

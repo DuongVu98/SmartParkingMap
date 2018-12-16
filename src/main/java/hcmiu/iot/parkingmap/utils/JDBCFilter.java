@@ -33,7 +33,6 @@ public class JDBCFilter implements Filter{
 		
 		if(servletPath.contains("/initmap")) {
 			Connection conn = null;
-			
 			try {
 				conn=ConnectionUtils.getConnection();
 				conn.setAutoCommit(false);
@@ -45,11 +44,11 @@ public class JDBCFilter implements Filter{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				ConnectionUtils.rollbackQuietly(conn);
-				System.out.println("exception");
 				throw new ServletException();
-			}finally {
-				ConnectionUtils.closeQuietly(conn);
 			}
+//			}finally {
+////				ConnectionUtils.closeQuietly(conn);
+//			}
 		}else {
 			chain.doFilter(request, response);
 		}
