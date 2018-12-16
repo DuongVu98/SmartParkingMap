@@ -36,8 +36,6 @@ public class JDBCFilter implements Filter{
 		// TODO Auto-generated method stub
 		HttpServletRequest req=(HttpServletRequest)request;
 		String servletPath= req.getServletPath();
-//		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("jdbc-beans.xml");
-//		ConnectionUtils connUtils= context.getBean("connection",ConnectionUtils.class);
 		
 		if(servletPath.contains("/initmap")) {
 			Connection conn=null;
