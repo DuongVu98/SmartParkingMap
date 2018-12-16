@@ -10,15 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import hcmiu.iot.parkingmap.beans.Place;
 import hcmiu.iot.parkingmap.dao.PlacesDAO;
 import hcmiu.iot.parkingmap.utils.MyUtils;
+import hcmiu.iot.parkingmap.utils.PlacesUtils;
 
 
 public class Map extends HttpServlet{
 	private static final long serialVersionUID=1L;
 	private ArrayList<Place> pList=null;
-	PlacesDAO pdao=new PlacesDAO();
+	ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("jdbc-beans.xml");
+//	PlacesDAO pdao=new PlacesDAO();
+	PlacesUtils pdao = context.getBean("placesDAO",PlacesUtils.class);
 	
 	public Map() {
 		super();
@@ -26,7 +31,8 @@ public class Map extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		pList=pdao.getAllPlaces(MyUtils.getStoredConnection(request));
+		
+		pList=(ArrayList<Place>)pdao.getAllPlaces(MyUtils.getStoredConnection(request));
 		request.setAttribute("placesList", pList);
 		ServletOutputStream out = response.getOutputStream();
 		out.println(pList.toString());
