@@ -12,12 +12,18 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.sql.DataSource;
 
 import hcmiu.iot.parkingmap.conn.ConnectionUtils;
 
 @WebFilter(urlPatterns= {"/*"})
 public class JDBCFilter implements Filter{
-
+	private DataSource dataSource;
+	
+	public void setDataSource(DataSource ds) {
+		this.dataSource = ds;
+	}
+	
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
@@ -35,13 +41,14 @@ public class JDBCFilter implements Filter{
 			Connection conn=null;
 			
 			try {
-				conn=ConnectionUtils.getConnection();
+//				conn=ConnectionUtils.getConnection();
+				conn=dataSource.getConnection();
 				conn.setAutoCommit(false);
 				MyUtils.storeConnection(request, conn);
 				chain.doFilter(request, response);
 				conn.commit();
 				
-			} catch (ClassNotFoundException | SQLException e) {
+			} catch ( SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				ConnectionUtils.rollbackQuietly(conn);

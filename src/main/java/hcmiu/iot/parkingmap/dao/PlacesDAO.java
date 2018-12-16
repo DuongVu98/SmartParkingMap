@@ -7,9 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import hcmiu.iot.parkingmap.conn.ConnectionUtils;
+import hcmiu.iot.parkingmap.utils.PlacesUtils;
 import hcmiu.iot.parkingmap.beans.Place;
 
-public class PlacesDAO {
+public class PlacesDAO implements PlacesUtils{
 	public PlacesDAO() {
 		
 	}
@@ -139,5 +140,11 @@ public class PlacesDAO {
 			}
 		}
 		return pList;
+	}
+
+	@Override
+	public void delete(Connection conn, int id) {
+		// TODO Auto-generated method stub
+		
 	}
 }
