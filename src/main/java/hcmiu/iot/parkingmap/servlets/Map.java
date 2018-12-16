@@ -3,19 +3,17 @@ package hcmiu.iot.parkingmap.servlets;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import hcmiu.iot.parkingmap.beans.Place;
 import hcmiu.iot.parkingmap.dao.PlacesDAO;
 import hcmiu.iot.parkingmap.utils.MyUtils;
-import hcmiu.iot.parkingmap.utils.PlacesUtils;
+
 
 
 public class Map extends HttpServlet{
@@ -36,9 +34,6 @@ public class Map extends HttpServlet{
 		ServletOutputStream out = response.getOutputStream();
 		out.println(pList.toString());
 		System.out.println(pList.toString());
-//		RequestDispatcher rd=null;
-//		rd=request.getRequestDispatcher("/map.jsp");
-//		rd.forward(request, response);
 	}
 	
 	@Override

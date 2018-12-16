@@ -20,15 +20,9 @@ import hcmiu.iot.parkingmap.conn.ConnectionUtils;
 
 @WebFilter(urlPatterns= {"/*"})
 public class JDBCFilter implements Filter{
-//	private DataSource dataSource;
-//	
-//	public void setDataSource(DataSource ds) {
-//		this.dataSource = ds;
-//	}
 	
 	ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("jdbc-beans.xml");
 	ConnectionUtils connUtils= context.getBean("connection",ConnectionUtils.class);
-	
 	
 	@Override
 	public void destroy() {
@@ -42,6 +36,8 @@ public class JDBCFilter implements Filter{
 		// TODO Auto-generated method stub
 		HttpServletRequest req=(HttpServletRequest)request;
 		String servletPath= req.getServletPath();
+//		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("jdbc-beans.xml");
+//		ConnectionUtils connUtils= context.getBean("connection",ConnectionUtils.class);
 		
 		if(servletPath.contains("/initmap")) {
 			Connection conn=null;
