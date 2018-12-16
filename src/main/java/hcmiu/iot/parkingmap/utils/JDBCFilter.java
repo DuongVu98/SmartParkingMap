@@ -14,15 +14,21 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import hcmiu.iot.parkingmap.conn.ConnectionUtils;
 
 @WebFilter(urlPatterns= {"/*"})
 public class JDBCFilter implements Filter{
-	private DataSource dataSource;
+//	private DataSource dataSource;
+//	
+//	public void setDataSource(DataSource ds) {
+//		this.dataSource = ds;
+//	}
 	
-	public void setDataSource(DataSource ds) {
-		this.dataSource = ds;
-	}
+	ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("jdbc-beans.xml");
+	ConnectionUtils connUtils= context.getBean("connection",ConnectionUtils.class);
+	
 	
 	@Override
 	public void destroy() {
@@ -41,14 +47,14 @@ public class JDBCFilter implements Filter{
 			Connection conn=null;
 			
 			try {
-//				conn=ConnectionUtils.getConnection();
-				conn=dataSource.getConnection();
+				conn=ConnectionUtils.getConnection();
+//				conn=dataSource.getConnection();
 				conn.setAutoCommit(false);
 				MyUtils.storeConnection(request, conn);
 				chain.doFilter(request, response);
 				conn.commit();
 				
-			} catch ( SQLException e) {
+			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				ConnectionUtils.rollbackQuietly(conn);
