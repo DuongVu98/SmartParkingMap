@@ -33,6 +33,7 @@ public class PlaceREST {
 	@Path("/all-places")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Place> getAllPlaces(){
+//		System.out.println(pdao.getAllPlaces(this.getConnection()));
 		return pdao.getAllPlaces(this.getConnection());
 	}
 	
