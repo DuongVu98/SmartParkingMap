@@ -113,7 +113,13 @@
 			<artifactId>activation</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-		
+
+		<!-- JavaServerPaggs Standard Tag Library -->
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>jstl-api</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>SmartParkingMap</finalName>
