@@ -5,10 +5,23 @@
 	<display-name>SmartParkingMap</display-name>
 
 	<servlet>
+		<servlet-name>jerseyServlet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>hcmiu.iot.parkingmap.rest</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jerseyServlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>Map</servlet-name>
 		<servlet-class>hcmiu.iot.parkingmap.servlets.Map</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Map</servlet-name>
 		<url-pattern>/initmap</url-pattern>

@@ -1,6 +1,13 @@
 package hcmiu.iot.parkingmap.beans;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="place")
 public class Place {
+	
 	private int id;
 	private String name;
 	private Double latitude, longitude;
