@@ -1,4 +1,4 @@
-package hcmiu.iot.smartparking.servlets;
+package hcmiu.iot.parkingmap.beans;
 
 public class Place {
 	private int id;
