@@ -29,11 +29,11 @@ public class Map extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		pList=pdao.getAllPlaces(MyUtils.getStoredConnection(request));
-		request.setAttribute("placesList", pList);
-		ServletOutputStream out = response.getOutputStream();
-		out.println(pList.toString());
-		System.out.println(pList.toString());
+//		pList=pdao.getAllPlaces(MyUtils.getStoredConnection(request));
+//		request.setAttribute("placesList", pList);
+//		ServletOutputStream out = response.getOutputStream();
+//		out.println(pList.toString());
+//		System.out.println(1234);
 		
 		RequestDispatcher rd=null;
 		rd=request.getRequestDispatcher("/views/map.jsp");
