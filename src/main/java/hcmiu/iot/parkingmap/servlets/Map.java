@@ -3,7 +3,7 @@ package hcmiu.iot.parkingmap.servlets;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +34,10 @@ public class Map extends HttpServlet{
 		ServletOutputStream out = response.getOutputStream();
 		out.println(pList.toString());
 		System.out.println(pList.toString());
+		
+		RequestDispatcher rd=null;
+		rd=request.getRequestDispatcher("/views/map.jsp");
+		rd.forward(request, response);
 	}
 	
 	@Override
