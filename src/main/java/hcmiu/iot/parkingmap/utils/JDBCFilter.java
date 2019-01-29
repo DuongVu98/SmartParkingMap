@@ -12,12 +12,18 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.sql.DataSource;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import hcmiu.iot.parkingmap.conn.ConnectionUtils;
 
 @WebFilter(urlPatterns= {"/*"})
 public class JDBCFilter implements Filter{
-
+	
+	ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("jdbc-beans.xml");
+	ConnectionUtils connUtils= context.getBean("connection",ConnectionUtils.class);
+	
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
@@ -36,6 +42,7 @@ public class JDBCFilter implements Filter{
 			
 			try {
 				conn=ConnectionUtils.getConnection();
+//				conn=dataSource.getConnection();
 				conn.setAutoCommit(false);
 				MyUtils.storeConnection(request, conn);
 				chain.doFilter(request, response);
