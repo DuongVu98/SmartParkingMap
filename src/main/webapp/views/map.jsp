@@ -22,8 +22,6 @@
         <h3 class="font-weight-bold">Ho Chi Minh city</h3>
         <div class="row">
             <div style="height:500px;border-style:groove;border-color:gray;overflow:auto;" class="col-lg-3">
-                <!--mg class="mx-auto d-block" src="res/iotlogo.png">
-                <p class="text-center text-success display-4">IU IoT Club</p-->
                 <div id="locations"></div>
             </div>
             <div class="col-md-9">
