@@ -12,9 +12,15 @@
         <link href="css/map-style.css" rel="stylesheet">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.9/angular-resource.js"></script>
 
         <script type="text/javascript" src="app/map/init-map.js"></script>
+        <script type="text/javascript" src="app/map/app.js"></script>
+        <script type="text/javascript" src="app/map/places/placesCtrl.js"></script>
+        <script type="text/javascript" src="app/map/services/common-services.js"></script>
+        <script type="text/javascript" src="app/map/services/placesResource.js"></script>
     </head>
     <body ng-app="placesManagement">
         <!-- page view -->
@@ -33,10 +39,12 @@
                         <b>Duration: </b><p id="duration-value">test</p>
                     </div>
                 </div>
-                <div id="map"></div>
+                <div id="map" ng-model="map"></div>
             </div>
         </div>
-        <div class="text-center" id="test">Test</div>
+        <div class="text-center" id="test" ng-controller="placesListCtrl as vm">Test
+            <div ng-repeat="place in vm.places">{{place.name}}</div>
+        </div>
         <!-- page view -->
 
         <!-- This is Thuan's API key -->
