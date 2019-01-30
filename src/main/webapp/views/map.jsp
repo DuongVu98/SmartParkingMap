@@ -10,13 +10,13 @@
         </style>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link href="css/map-style.css" rel="stylesheet">
-            
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
         <script type="text/javascript" src="app/map/init-map.js"></script>
     </head>
-    <body>
+    <body ng-app="placesManagement">
         <!-- page view -->
         <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header>
         <h3 class="font-weight-bold">Ho Chi Minh city</h3>
