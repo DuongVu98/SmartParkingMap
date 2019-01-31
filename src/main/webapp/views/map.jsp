@@ -16,19 +16,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.9/angular-resource.js"></script>
 
-        <script type="text/javascript" src="app/map/init-map.js"></script>
+
         <script type="text/javascript" src="app/map/app.js"></script>
         <script type="text/javascript" src="app/map/places/placesCtrl.js"></script>
         <script type="text/javascript" src="app/map/services/common-services.js"></script>
         <script type="text/javascript" src="app/map/services/placesResource.js"></script>
     </head>
-    <body ng-app="placesManagement">
+    <body ng-app="placesManagement" ng-controller="placesListCtrl as vm">
         <!-- page view -->
         <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header>
         <h3 class="font-weight-bold">Ho Chi Minh city</h3>
         <div class="row">
-            <div style="height:500px;border-style:groove;border-color:gray;overflow:auto;" class="col-lg-3">
-                <div id="locations"></div>
+            <div style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="col-lg-3">
+                <%-- <div id="locations"></div> --%>
+                <div class="locations border-bottom rounded border-dark" ng-repeat="place in vm.places">{{place.name}}</div>
             </div>
             <div class="col-md-9">
                 <div id="floating-panel" class="row">
@@ -41,9 +42,6 @@
                 </div>
                 <div id="map" ng-model="map"></div>
             </div>
-        </div>
-        <div class="text-center" id="test" ng-controller="placesListCtrl as vm">Test
-            <div ng-repeat="place in vm.places">{{place.name}}</div>
         </div>
         <!-- page view -->
 
