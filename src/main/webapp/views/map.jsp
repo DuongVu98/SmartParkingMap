@@ -20,7 +20,10 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu77FS-25mnr0N-64wK7dZZ51YU22eWzc&callback=createMap" defer></script>
 
         <script type="text/javascript" src="app/map/app.js"></script>
+
         <script type="text/javascript" src="app/map/places/placesCtrl.js"></script>
+        <script type="text/javascript" src="app/map/places/directionsCtrl.js"></script>
+
         <script type="text/javascript" src="app/map/services/common-services.js"></script>
         <script type="text/javascript" src="app/map/services/placesResource.js"></script>
     </head>
@@ -42,7 +45,7 @@
                         <b>Duration: </b><p id="duration-value">test</p>
                     </div>
                 </div>
-                <div id="map" ng-model="map"></div>
+                <div ng-controller="directionsCtrl" id="map" ng-model="map"></div>
             </div>
         </div>
         <!-- page view -->

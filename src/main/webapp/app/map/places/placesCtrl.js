@@ -10,7 +10,6 @@
         placesResource.query(function(data){
             vm.places=data;
             initMap(data);
-            console.log(1234);
         });
     }
 
