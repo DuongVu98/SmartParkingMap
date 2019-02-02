@@ -16,6 +16,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.9/angular-resource.js"></script>
 
+        <!-- This is Tung's API key -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu77FS-25mnr0N-64wK7dZZ51YU22eWzc&callback=createMap" defer></script>
 
         <script type="text/javascript" src="app/map/app.js"></script>
         <script type="text/javascript" src="app/map/places/placesCtrl.js"></script>
@@ -44,13 +46,19 @@
             </div>
         </div>
         <!-- page view -->
+        <script>
+        var map;
+        function createMap(){
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: {lat: 10.790958, lng: 106.692874}
+            });
+        }
 
+        </script>
         <!-- This is Thuan's API key -->
         <!-- script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSbtA0_Tz3jt215tYXIOTKArJR5zHWfYI&callback=initParkingMap"
         defer></script-->
-
-        <!-- This is Tung's API key -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu77FS-25mnr0N-64wK7dZZ51YU22eWzc" defer></script>
 
         <!-- This is My API key -->
         <!-- script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFiTa_g-zJvj2RltUKDRcwP-VLY4s5a24&callback=initParkingMap"
