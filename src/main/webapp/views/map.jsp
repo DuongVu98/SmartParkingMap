@@ -19,7 +19,6 @@
         <!-- This is Tung's API key -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu77FS-25mnr0N-64wK7dZZ51YU22eWzc&callback=createMap" defer></script>
 
-        <script type="text/javascript" src="js/pageInit.js"></script>
 
         <%--app script  --%>
         <script type="text/javascript" src="app/map/app.js"></script>
@@ -27,6 +26,7 @@
         <%-- controller script --%>
         <script type="text/javascript" src="app/map/places/placesCtrl.js"></script>
         <script type="text/javascript" src="app/map/places/directionsCtrl.js"></script>
+        <script type="text/javascript" src="app/map/places/distanceCtrl.js"></script>
 
         <%-- services script --%>
         <script type="text/javascript" src="app/map/services/common-services.js"></script>

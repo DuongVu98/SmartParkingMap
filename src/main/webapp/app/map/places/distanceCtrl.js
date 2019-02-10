@@ -1,27 +1,27 @@
 (function(){
+    "use strict";
     angular
     .module("placesManagement")
-    .controller("directionsCtrl",["placesResource","$scope",getPlaces]);
+    .controller("distanceCtrl",["$scope",getPlaces]);
 
     var home = {lat: 10.790958, lng: 106.692874};
-    var distanceService = new google.maps.DistanceMatrixService();
+    var distanceService ="";
 
-    function getPlaces(placesResource, $scope){
-        var vm=this;
-        placesResource.query(function(data){
-            vm.places=data;
-        });
+    function getPlaces($scope){
+
+        distanceService = new google.maps.DistanceMatrixService();
 
         $scope.directionActive=function ($event) {
             var newPlace=$event.target.value;
             getDistance(distanceService, function(disdur){
                 $scope.dis=disdur[0];
                 $scope.dur=disdur[1];
+                console.log("distance");
             });
         }
     }
 
-    function getDistance(service, orgn, des,callback){
+    function getDistance(service, callback){
         service.getDistanceMatrix({
             origins:[home],
             destinations:[newPlace],
