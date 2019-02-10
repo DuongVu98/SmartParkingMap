@@ -2,31 +2,48 @@
     "use strict";
     angular
     .module("placesManagement")
-    .controller("directionsCtrl",["placesResource",getPlaces]);
+    .controller("directionsCtrl",["placesResource","$scope",getPlaces]);
     // .factory("places",["placesResource",passPlaces]);
+    var home = {lat: 10.790958, lng: 106.692874};
+    var des = {lat: 10.799744, lng: 106.706362};
 
-    function getPlaces(placesResource){
+    var directionsService = "";
+    var directionsDisplay = "";
+    var distanceService = "";
+
+    var newPlace="";
+
+    function getPlaces(placesResource, $scope){
         var vm=this;
         placesResource.query(function(data){
             vm.places=data;
             initDirections(data);
             console.log(1234);
         });
+
+        $scope.directionActive=function ($event) {
+            console.log($event.target.value);
+            $scope.test=$event.target.textContent;
+
+            var obj=$event.target.value;
+            newPlace={lat: obj.lat, lng: obj.lng}
+            newPlace=obj;
+            calculateAndDisplayRoute(directionsService,directionsDisplay);
+        }
     }
 
     function initDirections(places){
-        var directionsService = new google.maps.DirectionsService;
-	    var directionsDisplay = new google.maps.DirectionsRenderer;
-        var distanceService = new google.maps.DistanceMatrixService();
+        directionsService = new google.maps.DirectionsService;
+	    directionsDisplay = new google.maps.DirectionsRenderer;
+        distanceService = new google.maps.DistanceMatrixService();
 
         directionsDisplay.setMap(map);
-        calculateAndDisplayRoute(directionsService,directionsDisplay);
     }
 
     function calculateAndDisplayRoute(service, display){
         service.route({
-            origin: {lat: 10.790958, lng: 106.692874},
-            destination: {lat: 10.799744, lng: 106.706362},
+            origin: home,
+            destination: newPlace,
             travelMode: 'DRIVING'
         },function(response, status){
             if(status === 'OK'){

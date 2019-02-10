@@ -36,10 +36,10 @@
         <!-- page view -->
         <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header>
         <h3 class="font-weight-bold">Ho Chi Minh city</h3>
-        <div class="row">
-            <div style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="label-box col-lg-3">
+        <div class="row" ng-controller="directionsCtrl">
+            <div id="locations" style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="label-box col-lg-3">
                 <%-- <div id="locations"></div> --%>
-                <div ng-click="showColor()" class="places-label border-bottom rounded border-dark" ng-repeat="place in vm.places">{{place.name}}</div>
+                <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom rounded border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
             </div>
             <div class="col-md-9">
                 <div id="floating-panel" class="row">
@@ -50,9 +50,11 @@
                         <b>Duration: </b><p id="duration-value">test</p>
                     </div>
                 </div>
-                <div ng-controller="directionsCtrl" id="map"></div>
+                <div id="map"></div>
             </div>
+            <div id="test" class="text-center">place name: {{test}}</div>
         </div>
+
         <!-- page view -->
         <script>
         var map;
