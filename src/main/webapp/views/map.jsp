@@ -19,11 +19,16 @@
         <!-- This is Tung's API key -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu77FS-25mnr0N-64wK7dZZ51YU22eWzc&callback=createMap" defer></script>
 
+        <script type="text/javascript" src="js/pageInit.js"></script>
+
+        <%--app script  --%>
         <script type="text/javascript" src="app/map/app.js"></script>
 
+        <%-- controller script --%>
         <script type="text/javascript" src="app/map/places/placesCtrl.js"></script>
         <script type="text/javascript" src="app/map/places/directionsCtrl.js"></script>
 
+        <%-- services script --%>
         <script type="text/javascript" src="app/map/services/common-services.js"></script>
         <script type="text/javascript" src="app/map/services/placesResource.js"></script>
     </head>
@@ -32,9 +37,9 @@
         <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header>
         <h3 class="font-weight-bold">Ho Chi Minh city</h3>
         <div class="row">
-            <div style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="col-lg-3">
+            <div style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="label-box col-lg-3">
                 <%-- <div id="locations"></div> --%>
-                <div class="locations border-bottom rounded border-dark" ng-repeat="place in vm.places">{{place.name}}</div>
+                <div ng-click="showColor()" class="places-label border-bottom rounded border-dark" ng-repeat="place in vm.places">{{place.name}}</div>
             </div>
             <div class="col-md-9">
                 <div id="floating-panel" class="row">
@@ -45,7 +50,7 @@
                         <b>Duration: </b><p id="duration-value">test</p>
                     </div>
                 </div>
-                <div ng-controller="directionsCtrl" id="map" ng-model="map"></div>
+                <div ng-controller="directionsCtrl" id="map"></div>
             </div>
         </div>
         <!-- page view -->

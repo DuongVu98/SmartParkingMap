@@ -26,4 +26,9 @@
             placeMarker(places);
         }
    }
+
+   $scope.showColor=function () {
+       console.log("ng-click");
+   }
+
 }());

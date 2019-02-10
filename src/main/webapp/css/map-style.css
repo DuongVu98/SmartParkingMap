@@ -1,9 +1,7 @@
 header {
 	color: aliceblue;
 }
-.place-label {
-	background-color: #6AC5FF;
-}
+
 #floating-panel {
 	width: 350px;
 	position: absolute;
@@ -33,6 +31,6 @@ body{
 	padding: 15px;
 }
 
-.locations{
+.places-label{
 	padding: 10px;
 }

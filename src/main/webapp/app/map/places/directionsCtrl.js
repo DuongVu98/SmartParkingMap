@@ -24,22 +24,22 @@
     }
 
     function calculateAndDisplayRoute(service, display){
-	service.route({
-		origin: {lat: 10.790958, lng: 106.692874},
-		destination: {lat: 10.799744, lng: 106.706362},
-		travelMode: 'DRIVING'
-	},function(response, status){
-		if(status === 'OK'){
-			display.setDirections(response);
-		}else if (status === google.maps.DirectionsStatus.OVER_QUERY_LIMIT) {
-			delayFactor++;
-			setTimeout(function(){
-				console.log(delayFactor);
-				calculateAndDisplayRoute(service, display);
-			},delayFactor*1000);
-		}else{
-			window.alert('Directions request failed due to ' + status);
-		}
-	});
-}
+        service.route({
+            origin: {lat: 10.790958, lng: 106.692874},
+            destination: {lat: 10.799744, lng: 106.706362},
+            travelMode: 'DRIVING'
+        },function(response, status){
+            if(status === 'OK'){
+                display.setDirections(response);
+            }else if (status === google.maps.DirectionsStatus.OVER_QUERY_LIMIT) {
+                delayFactor++;
+                setTimeout(function(){
+                    console.log(delayFactor);
+                    calculateAndDisplayRoute(service, display);
+                },delayFactor*1000);
+            }else{
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+    }
 }());
