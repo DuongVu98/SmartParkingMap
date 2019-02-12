@@ -21,14 +21,21 @@
             console.log(1234);
         });
 
+        // place-click event funtion
         $scope.directionActive=function ($event) {
             console.log($event.target.value);
-            $scope.test=$event.target.textContent;
+            $scope.placeName=$event.target.textContent;
 
-            var obj=$event.target.value;
-            newPlace={lat: obj.lat, lng: obj.lng}
-            newPlace=obj;
+            newPlace=$event.target.value;
+            // direction display
             calculateAndDisplayRoute(directionsService,directionsDisplay);
+
+            // distance display
+            getDistance(distanceService, function(disdur){
+                // console.log(disdur);
+                $scope.dis=disdur[0];
+                $scope.dur=disdur[1];
+            });
         }
     }
 
@@ -40,6 +47,7 @@
         directionsDisplay.setMap(map);
     }
 
+    // original direction function
     function calculateAndDisplayRoute(service, display){
         service.route({
             origin: home,
@@ -56,6 +64,27 @@
                 },delayFactor*1000);
             }else{
                 window.alert('Directions request failed due to ' + status);
+            }
+        });
+    }
+
+    // original distance function
+    function getDistance(service, callback){
+        service.getDistanceMatrix({
+            origins:[home],
+            destinations:[newPlace],
+            travelMode:'DRIVING',
+            unitSystem: google.maps.UnitSystem.METRIC,
+            avoidHighways:false,
+            avoidTolls: false
+        },function(response, status){
+            if(status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS"){
+                var distance = response.rows[0].elements[0].distance.text;
+                var duration = response.rows[0].elements[0].duration.text;
+                var disdur=[distance,duration];
+                callback(disdur);
+            }else{
+                alert("Unable to find the distance via road");
             }
         });
     }
