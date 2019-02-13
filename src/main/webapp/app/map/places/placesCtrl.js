@@ -20,7 +20,7 @@
                 map: map,
                 title: locations[i].name,
                 animation: google.maps.Animation.DROP,
-                // icon: "res/placeholder.png"
+                icon: "res/placeholder.png"
             });
             var infowindow= new google.maps.InfoWindow({content: locations[i].name});
             marker.addListener('click',function(){
