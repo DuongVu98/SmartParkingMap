@@ -34,3 +34,6 @@ body{
 .places-label{
 	padding: 10px;
 }
+.places-label:hover{
+	background-color: #A8A8A8
+}

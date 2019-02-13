@@ -37,6 +37,9 @@
                 $scope.dur=disdur[1];
             });
         }
+        $scope.mouseEffect=function($event){
+            $scope.effect=true;
+        }
     }
 
     function initDirections(places){

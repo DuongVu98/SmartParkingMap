@@ -15,7 +15,13 @@
 
     function initMap(places) {
         function placeMarker(locations){
-            var marker= new google.maps.Marker({position: locations[i], map: map, title: locations[i].name});
+            var marker= new google.maps.Marker({
+                position: locations[i],
+                map: map,
+                title: locations[i].name,
+                animation: google.maps.Animation.DROP,
+                // icon: "res/placeholder.png"
+            });
             var infowindow= new google.maps.InfoWindow({content: locations[i].name});
             marker.addListener('click',function(){
                 infowindow.open(map, marker);
