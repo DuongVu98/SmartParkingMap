@@ -40,10 +40,7 @@
                 $scope.dur=disdur[1];
             });
         }
-        $scope.mouseEffect=function($event){
-            $scope.effect=true;
-        }
-        
+
         //get user location
         if(navigator.geolocation){
             locationInfoWindow = new google.maps.InfoWindow;
