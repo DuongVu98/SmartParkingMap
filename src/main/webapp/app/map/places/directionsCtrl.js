@@ -11,6 +11,9 @@
     var directionsDisplay = "";
     var distanceService = "";
 
+    var locationInfoWindow = "";
+    var locationMarker="";
+    var myPos = home;
     var newPlace="";
 
     function getPlaces(placesResource, $scope){
@@ -40,6 +43,23 @@
         $scope.mouseEffect=function($event){
             $scope.effect=true;
         }
+        
+        //get user location
+        if(navigator.geolocation){
+            locationInfoWindow = new google.maps.InfoWindow;
+            navigator.geolocation.getCurrentPosition(function(position){
+                myPos= {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                console.log(myPos);
+                locationMarker= new google.maps.Marker({position: myPos, map: map,});
+                locationInfoWindow.setPosition(myPos);
+                locationInfoWindow.setContent('You are here');
+                locationInfoWindow.open(map,locationMarker);
+                map.setCenter(myPos);
+            });
+	    }
     }
 
     function initDirections(places){
@@ -50,10 +70,10 @@
         directionsDisplay.setMap(map);
     }
 
-    // original direction function
+    // original direction function (from user location)
     function calculateAndDisplayRoute(service, display){
         service.route({
-            origin: home,
+            origin: myPos,
             destination: newPlace,
             travelMode: 'DRIVING'
         },function(response, status){
