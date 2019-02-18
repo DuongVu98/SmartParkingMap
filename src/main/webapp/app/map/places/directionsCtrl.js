@@ -67,7 +67,7 @@
         directionsDisplay.setMap(map);
     }
 
-    // original direction function (from user location)
+    // original direction-displaying function (from user location)
     function calculateAndDisplayRoute(service, display){
         service.route({
             origin: myPos,
@@ -88,7 +88,7 @@
         });
     }
 
-    // original distance function
+    // original distance-getting function
     function getDistance(service, callback){
         service.getDistanceMatrix({
             origins:[home],
