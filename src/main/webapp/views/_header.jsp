@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+    <link rel="icon" href="res/icon.png" type="image/gif">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link href="css/map-style.css" rel="stylesheet">
 
@@ -12,7 +14,7 @@
     <!-- This is Tung's API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu77FS-25mnr0N-64wK7dZZ51YU22eWzc&callback=createMap" defer></script>
 
-    
+
     <%--app script  --%>
     <script type="text/javascript" src="app/map/app.module.js"></script>
 
