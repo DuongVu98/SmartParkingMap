@@ -4,9 +4,9 @@ header {
 
 #floating-panel {
 	width: 350px;
-	position: absolute;
-	top: 10px;
-	left: 25%;
+	position: fixed;
+	top: 50%;
+	right: 20px;
 	z-index: 5;
 	background-color: #fff;
 	padding: 5px;
