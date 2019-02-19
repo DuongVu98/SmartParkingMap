@@ -6,7 +6,7 @@
         <title>HCMIU Parking Map</title>
 
         <jsp:include page="/views/_header.jsp"></jsp:include>
-        
+
     </head>
     <body ng-app="placesManagement" ng-controller="placesListCtrl as vm">
         <!-- page view -->
@@ -14,7 +14,7 @@
         <h3 class="font-weight-bold">Ho Chi Minh city</h3>
 
         <div class="row" ng-controller="directionsCtrl">
-            <div id="locations" style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="label-box col-lg-3">
+            <div id="locations" style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="label-box col-lg-2">
                 <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
             </div>
             <div class="col-md-9">
