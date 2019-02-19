@@ -6,9 +6,12 @@
         <link href="css/index.css" rel="stylesheet">
     </head>
     <body>
-        <h2>Hello World!</h2>
-        <form method="get" action="initmap">
-            <button type="submit">Watch the map</button>
-        </form>
+        <div id="landing-page">
+            <div id="page-content">
+                <h2>Smart parking map</h2>
+                <a href="initmap">Watch the map</a>
+            </div>
+        </div>
+
     </body>
 </html>
