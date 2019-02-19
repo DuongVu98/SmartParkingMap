@@ -1,9 +1,7 @@
 header {
 	color: aliceblue;
 }
-.place-label {
-	background-color: #6AC5FF;
-}
+
 #floating-panel {
 	width: 350px;
 	position: absolute;
@@ -22,8 +20,20 @@ header {
 #map {
 	height: 590px;
 }
-html, body {
+html {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+}
+body{
+	height: 100%;
+	margin: 0;
+	padding: 15px;
+}
+
+.places-label{
+	padding: 10px;
+}
+.places-label:hover{
+	background-color: #A8A8A8
 }

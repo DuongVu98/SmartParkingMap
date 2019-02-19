@@ -11,10 +11,13 @@ public class Place {
 	
 	@XmlElement(name="id")
 	private int id;
+	
 	@XmlElement(name="name")
 	private String name;
+	
 	@XmlElement(name="lat")
 	private Double latitude;
+	
 	@XmlElement(name="lng")
 	private Double longitude;
 	
