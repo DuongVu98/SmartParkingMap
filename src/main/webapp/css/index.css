@@ -1,0 +1,5 @@
+body {
+    /* background: #333; */
+    background: url("../res/saigon.jpg") no-repeat;
+    background-size: cover;
+}
