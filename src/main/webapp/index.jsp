@@ -3,11 +3,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>HCMIU Parking Map</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link href="css/index.css" rel="stylesheet">
     </head>
     <body>
         <div id="landing-page">
-            <div id="page-content">
+            <div id="page-content" class="container">
                 <h2>Smart parking map</h2>
                 <a href="initmap">Watch the map</a>
             </div>
