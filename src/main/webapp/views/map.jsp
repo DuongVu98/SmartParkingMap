@@ -21,15 +21,15 @@
 
 
         <%--app script  --%>
-        <script type="text/javascript" src="app/map/app.js"></script>
+        <script type="text/javascript" src="app/map/app.module.js"></script>
 
         <%-- controller script --%>
-        <script type="text/javascript" src="app/map/places/placesCtrl.js"></script>
-        <script type="text/javascript" src="app/map/places/directionsCtrl.js"></script>
+        <script type="text/javascript" src="app/map/places/places.controller.js"></script>
+        <script type="text/javascript" src="app/map/places/directions.controller.js"></script>
 
         <%-- services script --%>
-        <script type="text/javascript" src="app/map/services/common-services.js"></script>
-        <script type="text/javascript" src="app/map/services/placesResource.js"></script>
+        <script type="text/javascript" src="app/map/services/common.service.js"></script>
+        <script type="text/javascript" src="app/map/services/places.service.js"></script>
     </head>
     <body ng-app="placesManagement" ng-controller="placesListCtrl as vm">
         <!-- page view -->
