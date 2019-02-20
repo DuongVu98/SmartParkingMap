@@ -30,15 +30,14 @@
             $scope.placeName=$event.target.textContent;
 
             newPlace=$event.target.value;
-            // direction display
-            calculateAndDisplayRoute(directionsService,directionsDisplay);
-
             // distance display
             getDistance(distanceService, function(disdur){
-                // console.log(disdur);
+                console.log(disdur);
                 $scope.dis=disdur[0];
                 $scope.dur=disdur[1];
             });
+            // direction display
+            calculateAndDisplayRoute(directionsService,directionsDisplay);
         }
 
         //get user location
@@ -91,7 +90,7 @@
     // original distance-getting function
     function getDistance(service, callback){
         service.getDistanceMatrix({
-            origins:[home],
+            origins:[myPos],
             destinations:[newPlace],
             travelMode:'DRIVING',
             unitSystem: google.maps.UnitSystem.METRIC,

@@ -17,18 +17,12 @@
             <div id="locations" style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="label-box col-lg-2">
                 <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
             </div>
+            <div id="floating-panel">
+                <p class="bg-primary" id="placeName">{{placeName}}</p>
+                <p>{{dis}}</p>
+                <p>{{dur}}</p>
+            </div>
             <div class="col-md-9">
-                <div id="floating-panel" class="row">
-                    <div class="row col-md-6">
-                        <b>Destination: </b><p id="destination-name">{{placeName}}</p>
-                    </div>
-                    <div class="row col-md-6">
-                        <b>Distance: </b><p id="distance-value">{{dis}}</p>
-                    </div>
-                    <div class="row col-md-6">
-                        <b>Duration: </b><p id="duration-value">{{dur}}</p>
-                    </div>
-                </div>
                 <div id="map"></div>
             </div>
         </div>

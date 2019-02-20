@@ -3,22 +3,24 @@ header {
 }
 
 #floating-panel {
-	width: 350px;
-	position: fixed;
+	width: 200px;
+	position: absolute;
 	top: 50%;
 	right: 20px;
-	z-index: 5;
+	z-index: 1;
 	background-color: #fff;
-	padding: 5px;
 	border: 1px solid #999;
 	text-align: center;
 	font-family: 'Roboto', 'sans-serif';
 	line-height: 30px;
-	padding-left: 10px;
 }
 
+#placeName{
+	color: white;
+}
 #map {
 	height: 590px;
+	/* position: relative; */
 }
 html {
 	height: 100%;
