@@ -49,7 +49,11 @@
                     lng: position.coords.longitude
                 };
                 console.log(myPos);
-                locationMarker= new google.maps.Marker({position: myPos, map: map,});
+                locationMarker= new google.maps.Marker({
+                    position: myPos,
+                    map: map,
+                    icon: "res/car.png"
+                });
                 locationInfoWindow.setPosition(myPos);
                 locationInfoWindow.setContent('You are here');
                 locationInfoWindow.open(map,locationMarker);
