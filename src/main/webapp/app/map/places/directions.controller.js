@@ -28,14 +28,16 @@
         $scope.directionActive=function ($event) {
             console.log($event.target.value);
             $scope.placeName=$event.target.textContent;
-
             newPlace=$event.target.value;
+
             // distance display
             getDistance(distanceService, function(disdur){
                 console.log(disdur);
+                $scope.placeName=$event.target.textContent;
                 $scope.dis=disdur[0];
                 $scope.dur=disdur[1];
             });
+
             // direction display
             calculateAndDisplayRoute(directionsService,directionsDisplay);
         }
@@ -92,7 +94,7 @@
     }
 
     // original distance-getting function
-    function getDistance(service, callback){
+    function getDistance(service,callback){
         service.getDistanceMatrix({
             origins:[myPos],
             destinations:[newPlace],
