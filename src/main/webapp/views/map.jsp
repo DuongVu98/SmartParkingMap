@@ -18,9 +18,9 @@
                 <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
             </div>
             <div id="floating-panel">
-                <p class="bg-primary" id="placeName">{{placeName}}</p>
-                <p>{{dis}}</p>
-                <p>{{dur}}</p>
+                <p id="panel-name" class="bg-primary">{{placeName}}</p>
+                <p class="panel-prob"><i class="fas fa-map-marker-alt"></i>{{dis}}</p>
+                <p class="panel-prob"><i class="far fa-clock"></i>{{dur}}</p>
             </div>
             <div class="col-md-9">
                 <div id="map"></div>

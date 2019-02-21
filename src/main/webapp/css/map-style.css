@@ -8,16 +8,12 @@ header {
 	top: 50%;
 	right: 20px;
 	z-index: 1;
-	background-color: #fff;
-	border: 1px solid #999;
-	text-align: center;
+	background-color: white;
+	border: 1px solid grey;
 	font-family: 'Roboto', 'sans-serif';
-	line-height: 30px;
+	/* line-height: 25px; */
 }
 
-#placeName{
-	color: white;
-}
 #map {
 	height: 590px;
 	/* position: relative; */
@@ -38,4 +34,13 @@ body{
 }
 .places-label:hover{
 	background-color: #A8A8A8
+}
+
+#panel-name{
+	text-align: center;
+	color: white;
+}
+.panel-prob i{
+	padding-left: 20px;
+	padding-right: 50px;
 }
