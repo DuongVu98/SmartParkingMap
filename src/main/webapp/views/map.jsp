@@ -14,17 +14,23 @@
         <h3 class="font-weight-bold">Ho Chi Minh city</h3>
 
         <div class="row" ng-controller="directionsCtrl">
-            <div id="locations" style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="label-box col-lg-2">
-                <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
-            </div>
-            <div id="floating-panel">
-                <p id="panel-name" class="bg-primary">{{placeName}}</p>
-                <p class="panel-prob"><i class="fas fa-map-marker-alt"></i>{{dis}}</p>
-                <p class="panel-prob"><i class="far fa-clock"></i>{{dur}}</p>
-            </div>
             <div class="col-md-9">
                 <div id="map"></div>
             </div>
+
+            <div class="col-lg-3">
+                <div id="locations-box" class="label-box">
+                    <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
+                </div>
+
+                <div id="floating-panel">
+                    <p id="panel-name" class="bg-primary">{{placeName}}</p>
+                    <p class="panel-prob"><i class="fas fa-map-marker-alt"></i>{{dis}}</p>
+                    <p class="panel-prob"><i class="far fa-clock"></i>{{dur}}</p>
+                </div>
+            </div>
+
+
         </div>
 
         <!-- page view -->

@@ -4,7 +4,6 @@ header {
 
 #floating-panel {
 	width: 200px;
-	position: absolute;
 	top: 50%;
 	right: 20px;
 	z-index: 1;
@@ -12,6 +11,15 @@ header {
 	border: 1px solid grey;
 	font-family: 'Roboto', 'sans-serif';
 	/* line-height: 25px; */
+}
+
+#locations-box{
+	height: 400px;
+	background: #E9ECED;
+	border-color: gray;
+	overflow: auto;
+	border-radius:15px;
+	padding:5px;
 }
 
 #map {
