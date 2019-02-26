@@ -10,28 +10,32 @@
     </head>
     <body ng-app="placesManagement" ng-controller="placesListCtrl as vm">
         <!-- page view -->
-        <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header>
-        <h3 class="font-weight-bold">Ho Chi Minh city</h3>
+        <%-- <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header> --%>
+        <header>
+            <img src="res/iot-logo2.png">
+        </header>
+        <div id="body">
+            <h3 class="font-weight-bold">Ho Chi Minh city</h3>
 
-        <div class="row" ng-controller="directionsCtrl">
-            <div class="col-md-9">
-                <div id="map"></div>
-            </div>
-
-            <div class="col-lg-3">
-                <div id="locations-box" class="label-box">
-                    <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
+            <div class="row" ng-controller="directionsCtrl">
+                <div class="col-md-9">
+                    <div id="map"></div>
                 </div>
 
-                <div id="floating-panel">
-                    <p id="panel-name" class="bg-primary">{{placeName}}</p>
-                    <p class="panel-prob"><i class="fas fa-map-marker-alt"></i>{{dis}}</p>
-                    <p class="panel-prob"><i class="far fa-clock"></i>{{dur}}</p>
+                <div class="col-lg-3">
+                    <div id="locations-box">
+                        <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
+                    </div>
+
+                    <div id="floating-panel">
+                        <p id="panel-name" class="bg-primary">{{placeName}}</p>
+                        <p class="panel-prob"><i class="fas fa-map-marker-alt"></i>{{dis}}</p>
+                        <p class="panel-prob"><i class="far fa-clock"></i>{{dur}}</p>
+                    </div>
                 </div>
             </div>
-
-
         </div>
+
 
         <!-- page view -->
         <script>

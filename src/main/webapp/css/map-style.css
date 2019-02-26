@@ -1,7 +1,14 @@
 header {
 	color: aliceblue;
+	background-color: #34B7F4;
 }
-
+header > img{
+	width: 400px;
+}
+#body{
+	padding:15px;
+	margin: 0;
+}
 #floating-panel {
 	width: 200px;
 	top: 50%;
@@ -32,9 +39,10 @@ html {
 	padding: 0;
 }
 body{
+	background-color: #FBFEFF;
 	height: 100%;
 	margin: 0;
-	padding: 15px;
+	/* padding: 15px; */
 }
 
 .places-label{
