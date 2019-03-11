@@ -9,8 +9,8 @@ header > img{
 	padding:15px;
 	margin: 0;
 }
-#floating-panel {
-	width: 200px;
+#info-box {
+	width: 100%;
 	top: 50%;
 	right: 20px;
 	z-index: 1;
@@ -58,5 +58,5 @@ body{
 }
 .panel-prob i{
 	padding-left: 20px;
-	padding-right: 50px;
+	padding-right: 100px;
 }

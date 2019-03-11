@@ -54,7 +54,7 @@
                 locationMarker= new google.maps.Marker({
                     position: myPos,
                     map: map,
-                    icon: "res/your-car.png"
+                    icon: "res/car-smaller.png"
                 });
                 locationInfoWindow.setPosition(myPos);
                 locationInfoWindow.setContent('You are here');
