@@ -12,7 +12,8 @@
         <!-- page view -->
         <%-- <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header> --%>
         <header>
-            <img src="res/iot-logo2.png">
+            <!-- <img src="res/iot-logo2.png"> -->
+            <img src="res/smartparkinglogo.png">
         </header>
         <div id="body">
             <h3 class="font-weight-bold">Ho Chi Minh city</h3>
