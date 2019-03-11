@@ -10,7 +10,7 @@
     <body>
         <div id="landing-page">
             <div id="page-content" class="container">
-                <img src="res/logo.png">
+                <img src="res/circle-logo.png">
                 <h2>Smart parking map</h2>
                 <a href="initmap">Watch the map</a>
             </div>
