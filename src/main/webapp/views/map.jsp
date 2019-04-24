@@ -10,28 +10,33 @@
     </head>
     <body ng-app="placesManagement" ng-controller="placesListCtrl as vm">
         <!-- page view -->
-        <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header>
-        <h3 class="font-weight-bold">Ho Chi Minh city</h3>
+        <%-- <header class="container-fluid display-2 bg-primary text-center font-weight-bold">Smart Paking map</header> --%>
+        <header>
+            <!-- <img src="res/iot-logo2.png"> -->
+            <img src="res/smartparkinglogo.png">
+        </header>
+        <div id="body">
+            <h3 class="font-weight-bold">Ho Chi Minh city</h3>
 
-        <div class="row" ng-controller="directionsCtrl">
-            <div id="locations" style="height:500px;background:#E9ECED;border-color:gray;overflow:auto;border-radius:15px;padding:5px;" class="label-box col-lg-2">
-                <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
-            </div>
-            <div class="col-md-9">
-                <div id="floating-panel" class="row">
-                    <div class="row col-md-6">
-                        <b>Destination: </b><p id="destination-name">{{placeName}}</p>
+            <div class="row" ng-controller="directionsCtrl">
+                <div class="col-md-9">
+                    <div id="map"></div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div id="locations-box">
+                        <div id="{{place.id}}" ng-click="directionActive($event)" class="places-label border-bottom border-dark" ng-repeat="place in vm.places" ng-value="place">{{place.name}}</div>
                     </div>
-                    <div class="row col-md-6">
-                        <b>Distance: </b><p id="distance-value">{{dis}}</p>
-                    </div>
-                    <div class="row col-md-6">
-                        <b>Duration: </b><p id="duration-value">{{dur}}</p>
+
+                    <div id="info-box">
+                        <p id="panel-name" class="bg-primary">{{placeName}}</p>
+                        <p class="panel-prob"><i class="fas fa-map-marker-alt"></i>{{dis}}</p>
+                        <p class="panel-prob"><i class="far fa-clock"></i>{{dur}}</p>
                     </div>
                 </div>
-                <div id="map"></div>
             </div>
         </div>
+
 
         <!-- page view -->
         <script>

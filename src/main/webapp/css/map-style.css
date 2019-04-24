@@ -1,24 +1,37 @@
 header {
 	color: aliceblue;
+	background-color: #34B7F4;
+}
+header > img{
+	width: 400px;
+}
+#body{
+	padding:15px;
+	margin: 0;
+}
+#info-box {
+	width: 100%;
+	top: 50%;
+	right: 20px;
+	z-index: 1;
+	background-color: white;
+	border: 1px solid grey;
+	font-family: 'Roboto', 'sans-serif';
+	/* line-height: 25px; */
 }
 
-#floating-panel {
-	width: 350px;
-	position: absolute;
-	top: 10px;
-	left: 25%;
-	z-index: 5;
-	background-color: #fff;
-	padding: 5px;
-	border: 1px solid #999;
-	text-align: center;
-	font-family: 'Roboto', 'sans-serif';
-	line-height: 30px;
-	padding-left: 10px;
+#locations-box{
+	height: 400px;
+	background: #E9ECED;
+	border-color: gray;
+	overflow: auto;
+	border-radius:15px;
+	padding:5px;
 }
 
 #map {
 	height: 590px;
+	/* position: relative; */
 }
 html {
 	height: 100%;
@@ -26,9 +39,10 @@ html {
 	padding: 0;
 }
 body{
+	background-color: #FBFEFF;
 	height: 100%;
 	margin: 0;
-	padding: 15px;
+	/* padding: 15px; */
 }
 
 .places-label{
@@ -36,4 +50,13 @@ body{
 }
 .places-label:hover{
 	background-color: #A8A8A8
+}
+
+#panel-name{
+	text-align: center;
+	color: white;
+}
+.panel-prob i{
+	padding-left: 20px;
+	padding-right: 100px;
 }

@@ -28,17 +28,18 @@
         $scope.directionActive=function ($event) {
             console.log($event.target.value);
             $scope.placeName=$event.target.textContent;
-
             newPlace=$event.target.value;
-            // direction display
-            calculateAndDisplayRoute(directionsService,directionsDisplay);
 
             // distance display
             getDistance(distanceService, function(disdur){
-                // console.log(disdur);
+                console.log(disdur);
+                $scope.placeName=$event.target.textContent;
                 $scope.dis=disdur[0];
                 $scope.dur=disdur[1];
             });
+
+            // direction display
+            calculateAndDisplayRoute(directionsService,directionsDisplay);
         }
 
         //get user location
@@ -50,7 +51,11 @@
                     lng: position.coords.longitude
                 };
                 console.log(myPos);
-                locationMarker= new google.maps.Marker({position: myPos, map: map,});
+                locationMarker= new google.maps.Marker({
+                    position: myPos,
+                    map: map,
+                    icon: "res/car-smaller.png"
+                });
                 locationInfoWindow.setPosition(myPos);
                 locationInfoWindow.setContent('You are here');
                 locationInfoWindow.open(map,locationMarker);
@@ -89,9 +94,9 @@
     }
 
     // original distance-getting function
-    function getDistance(service, callback){
+    function getDistance(service,callback){
         service.getDistanceMatrix({
-            origins:[home],
+            origins:[myPos],
             destinations:[newPlace],
             travelMode:'DRIVING',
             unitSystem: google.maps.UnitSystem.METRIC,
