@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-resource.js"></script>
+
+    <script src="../services/common.service.js"></script>
+    <script src="../services/places.service.js"></script>
+
+    <script src="placesList.module.js"></script>
+    <script src="placesList.controller.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Places List</h1>
+    <div ng-app="placesListManagement" ng-controller="placesListController as vm">
+        <div class="place-items" ng-repeat="place in vm.places">
+            <div ng-include="'../placeItem/place-item.html'"></div>
+        </div>
+    </div>
+</body>
+
+</html>

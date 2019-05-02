@@ -1,4 +1,4 @@
 (function(){
     "use strict";
-    angular.module("placesListManagement");
+    var app = angular.module("placesListManagement",["common.services"]);
 }());

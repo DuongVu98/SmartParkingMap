@@ -13,6 +13,7 @@
                 <img src="res/circle-logo.png">
                 <h2>Smart parking map</h2>
                 <a href="initmap">Watch the map</a>
+                <a href="home">Home</a>
             </div>
         </div>
 

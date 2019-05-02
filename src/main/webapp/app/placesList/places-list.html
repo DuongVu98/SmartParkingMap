@@ -1,0 +1,11 @@
+<script src="placesList.module.js"></script>
+<script src="placesList.controller.js"></script>
+
+<link rel="stylesheet" href="places-list.css">
+
+<h1>Places List</h1>
+<div ng-app="placesListManagement" ng-controller="placesListController as vm">
+    <div class="place-items" ng-repeat="place in vm.places">
+        <div ng-include="'../placeItem/place-item.html'"></div>
+    </div>
+</div>

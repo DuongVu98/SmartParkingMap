@@ -1,9 +1,10 @@
 (function(){
+    "use strict";
     angular
     .module("placesListManagement")
     .controller("placesListController", ["placesResource", placesListController]);
 
-    function placesListController(){
+    function placesListController(placesResource){
         var vm = this;
         placesResource.query(function(data){
             vm.places=data;
